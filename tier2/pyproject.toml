@@ -1,5 +1,5 @@
 [project]
-name = "tier1"
+name = "tier2"
 version = "0.1.0"
 description = ""
 authors = [
@@ -14,17 +14,13 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [{include = "tier1", from = "src"}]
+packages = [{include = "tier2", from = "src"}]
+
 
 [tool.poetry.group.dev.dependencies]
+black = "^25.9.0"
 pytest = "^8.4.2"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
-
-[dependency-groups]
-dev = [
-    "black (>=25.9.0,<26.0.0)",
-    "pytest (>=8.4.2,<9.0.0)"
-]
