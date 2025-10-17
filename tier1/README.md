@@ -19,7 +19,7 @@ This project uses **Poetry** for dependency management.
 
 #### 1. Install Dependencies
 
-Ensure you have Poetry installed, then install the project dependencies:
+Ensure you have **Poetry** installed, then install the project dependencies:
 
 ```bash
 # From the ping-me/tier1/ directory
@@ -28,7 +28,7 @@ poetry install
 
 #### 2. Configure Environment Variables
 
-Create a file named `.env` inside the `ping-me/tier1/` directory. Do not commit this file.
+Create a file named **`.env`** inside the `ping-me/tier1/` directory. **Do not commit this file.**
 
 It must contain the following variables:
 
@@ -37,12 +37,10 @@ It must contain the following variables:
 # --- Twilio Credentials ---
 TWILIO_ACCOUNT_SID=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 TWILIO_AUTH_TOKEN=your_auth_token_here
-
-# --- Phone Numbers (E.164 format: +12223334444) ---
 TWILIO_FROM_NUMBER=+15555551234
 NOTIFICATION_PHONE_NUMBER=+15558675310 
 
-# --- Flask Secret Key (Required for 'flash' messages) ---
+# --- Flask Secret Key (Required for web app security) ---
 FLASK_SECRET_KEY=a_random_key_for_local_testing
 ```
 
@@ -54,14 +52,18 @@ Start the Flask development server using Poetry's run command, which executes th
 poetry run python src/tier1/app.py
 ```
 
-#### How to Run
+---
 
-1. Open your web browser to the displayed address (usually http://127.0.0.1:5000/).
-2. Click the "Ping Me" button.
-3. The Python console will log the API call, and the UI will display a success or failure message.
+### How to Run
 
-#### What I Learned
+1.  Open your web browser to the displayed address (usually `http://127.0.0.1:5000/`).
+2.  Click the **"Send Message 🚀"** button.
+3.  The **Python console** will log the API call, and the UI will display a success or failure message.
 
-- **Secure Credential Loading**: Successfully implemented `python-dotenv` and confirmed environment variables are loaded securely into the Flask application context.
-- **Centralized Error Handling**: Created a robust initial check to ensure all four required environment variables are present before attempting to instantiate the Twilio client, providing a clear error message as required.
-- **Web Framework Basics**: Established a minimal, functional Flask application that handles routing (`/`), form submission (`POST`), and displays real-time status updates using Bootstrap 5 and Flask's `flash` messaging system.
+---
+
+### What I Learned
+
+* **Secure Credential Loading**: Successfully implemented `python-dotenv` and confirmed environment variables are loaded securely into the Flask application context.
+* **Centralized Error Handling**: Created a robust initial check to ensure all four required environment variables are present before attempting to instantiate the Twilio client, providing a clear error message as required.
+* **Web Framework Basics**: Established a minimal, functional Flask application that handles routing (`/`), form submission (`POST`), and displays real-time status updates using **Bootstrap 5** and Flask's `flash` messaging system.
